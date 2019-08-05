@@ -3,4 +3,4 @@ server:
 dubbo:
   port: 8280
   registry:
-    addr: zookeeper://192.168.0.104:2181
+    addr: zookeeper://10.50.255.117:2181

@@ -1,9 +1,8 @@
 package com.ws.learn.test;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.ws.learn.api.response.CommonResponse;
-import com.ws.learn.http.server.config.TestCommand;
+import com.ws.learn.http.server.hystrix.command.TestCommand;
 import com.ws.learn.http.server.invoker.TestInvoker;
 import com.ws.learn.rpc.service.TestService;
 import org.junit.Test;

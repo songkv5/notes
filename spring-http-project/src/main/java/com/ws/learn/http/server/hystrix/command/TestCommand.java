@@ -1,4 +1,4 @@
-package com.ws.learn.http.server.config;
+package com.ws.learn.http.server.hystrix.command;
 
 import com.netflix.hystrix.*;
 import com.ws.learn.api.response.CommonResponse;
@@ -6,6 +6,9 @@ import com.ws.learn.rpc.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 手动配置hystrix
+ */
 public class TestCommand extends HystrixCommand<CommonResponse<Long>> {
     Logger logger = LoggerFactory.getLogger(TestCommand.class);
     private TestService testService;
@@ -22,12 +25,16 @@ public class TestCommand extends HystrixCommand<CommonResponse<Long>> {
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("testService"))
                 .andCommandKey(HystrixCommandKey.Factory.asKey("getARandomNumber"))
                 .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
-                        .withCircuitBreakerRequestVolumeThreshold(10)//至少有10个请求，熔断器才进行错误率的计算
-                        .withCircuitBreakerSleepWindowInMilliseconds(5000)//熔断器中断请求5秒后会进入半打开状态,放部分流量过去重试
-                        .withCircuitBreakerErrorThresholdPercentage(50)//错误率达到50开启熔断保护
+                        //至少有10个请求，熔断器才进行错误率的计算
+                        .withCircuitBreakerRequestVolumeThreshold(10)
+                        //熔断器中断请求5秒后会进入半打开状态,放部分流量过去重试
+                        .withCircuitBreakerSleepWindowInMilliseconds(5000)
+                        //错误率达到50开启熔断保护
+                        .withCircuitBreakerErrorThresholdPercentage(50)
                         .withExecutionTimeoutEnabled(true)
-                        .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.SEMAPHORE)
-                        .withExecutionIsolationSemaphoreMaxConcurrentRequests(10))//最大并发请求量
+                        .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.THREAD)
+                        //最大并发请求量
+                        .withExecutionIsolationSemaphoreMaxConcurrentRequests(10))
                         .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter().withCoreSize(10)));
         this.testService = testService;
         this.param = param;
