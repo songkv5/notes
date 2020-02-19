@@ -1,0 +1,6 @@
+server:
+  port: 8080
+dubbo:
+  port: 8280
+  registry:
+    addr: zookeeper://192.168.0.104:2181

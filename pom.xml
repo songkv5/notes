@@ -11,6 +11,11 @@
     <modules>
         <module>arithmetic</module>
         <module>data-structure</module>
+        <module>tools</module>
+        <module>spring-boot-test</module>
+        <module>api-common-base</module>
+        <module>api-client</module>
+        <module>spring-http-project</module>
     </modules>
 
 
