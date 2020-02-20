@@ -42,7 +42,7 @@ public class BinaryTree<T> {
 
     public int length(Node<T> node) {
         if (node.getL() == null && node.getR() == null) {
-            return 0;
+            return 1;
         } else {
             int ll = length(node.getL());
             int rl = length(node.getR());
