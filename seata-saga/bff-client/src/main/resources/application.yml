@@ -1,0 +1,30 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    platform: h2
+    initialization-mode: ALWAYS
+    schema: classpath:schema-h2.sql
+#    url: jdbc:h2:tcp://localhost/~/saga_3
+    url: jdbc:h2:mem:saga_3
+    schema-username: willis
+    schema-password: q12wQ!@W
+    password: q12wQ!@W
+    username: willis
+
+# reference https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/common-application-properties.html
+
+dubbo:
+  application:
+    name: dubbo-client
+  registry:
+    address: zookeeper://127.0.0.1:2181
+
+server:
+  port: 8083
+
+db:
+  h2:
+    url: jdbc:h2:tcp://localhost/~/saga_2
+    user: sa
+    pwd: sa

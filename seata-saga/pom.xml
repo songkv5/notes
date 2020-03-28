@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>notes</artifactId>
+        <groupId>com.ws.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>seata-saga</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>saga-server</module>
+        <module>dubbo-provider-1</module>
+        <module>dubbo-provider-2</module>
+        <module>dubbo-client</module>
+        <module>bff-client</module>
+    </modules>
+
+
+</project>

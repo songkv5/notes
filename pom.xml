@@ -16,6 +16,8 @@
         <module>api-common-base</module>
         <module>api-client</module>
         <module>spring-http-project</module>
+        <module>seata-saga</module>
+        <module>zk-mock</module>
     </modules>
 
 
