@@ -18,6 +18,7 @@
         <module>spring-http-project</module>
         <module>seata-saga</module>
         <module>zk-mock</module>
+        <module>design-pattern</module>
     </modules>
 
 
