@@ -12,6 +12,9 @@ import lombok.Getter;
 public class PipLineHolder {
     @Getter
     private PipLineContext context;
+    /**
+     * 这里使用的是链表，是指存放头指针。如果使用数组，这里改成数组即可
+     */
     @Getter
     private Node head;
 

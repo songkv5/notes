@@ -28,6 +28,7 @@ public class DataCheckNode extends AbstractNode<DemoContextAttach, Boolean> {
     @Override
     public PipLineResult<Boolean> process(PipLineContext<DemoContextAttach> pipLineContext) {
         System.out.println("正在检查数据是否满足条件");
+        mockWasteTime();
         DemoContextAttach data = pipLineContext.getData();
         DemoRequest request = data.getRequest();
         Long userId = request.getUserId();

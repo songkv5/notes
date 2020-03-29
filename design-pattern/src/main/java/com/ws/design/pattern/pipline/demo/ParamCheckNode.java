@@ -5,6 +5,8 @@ import com.ws.design.pattern.pipline.PipLineContext;
 import com.ws.design.pattern.pipline.PipLineException;
 import com.ws.design.pattern.pipline.PipLineResult;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @Author willis
  * @desc 参数检测环节
@@ -21,6 +23,7 @@ public class ParamCheckNode extends AbstractNode<DemoContextAttach, Void> {
     @Override
     public PipLineResult<Void> process(PipLineContext<DemoContextAttach> pipLineContext) {
         System.out.println("正在检查参数正确性");
+        mockWasteTime();
         DemoContextAttach data = pipLineContext.getData();
         DemoRequest request = data.getRequest();
         Long userId = request.getUserId();

@@ -17,10 +17,12 @@ public class OrderCreateNode extends AbstractNode<DemoContextAttach, Long> {
     @Override
     public PipLineResult<Long> process(PipLineContext<DemoContextAttach> pipLineContext) {
         System.out.println("正在下单");
+        mockWasteTime();
         DemoContextAttach data = pipLineContext.getData();
         Product product = data.getProduct();
         User user = data.getUser();
         Long orderId = orderService.createOrder(user, product, 2);
+        System.out.println("下单成功");
         return PipLineResult.successWithData(orderId);
     }
 }
