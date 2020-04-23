@@ -19,6 +19,7 @@
         <module>seata-saga</module>
         <module>zk-mock</module>
         <module>design-pattern</module>
+        <module>guice-sample</module>
     </modules>
 
 
