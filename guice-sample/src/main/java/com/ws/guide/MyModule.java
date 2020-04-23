@@ -12,6 +12,7 @@ import com.google.inject.Singleton;
 public class MyModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(Human.class).to(Man.class).in(Singleton.class);
+        bind(Human.class)..to(Man.class).in(Singleton.class);
+        bind(Animal.class).to(Dog.class);
     }
 }

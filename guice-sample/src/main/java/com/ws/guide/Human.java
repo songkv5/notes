@@ -7,5 +7,8 @@ package com.ws.guide;
  * @since 2020年04月23日 20:21
  */
 public interface Human {
+    /**
+     * 上厕所
+     */
     void go2Wc();
 }
