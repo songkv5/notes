@@ -9,9 +9,15 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Service(group = "test")
+/**
+ * @author willis<songkai01>
+ * @chapter
+ * @section
+ * @since 2020年05月27日 17:42
+ */
+@Service(group = "test2")
 @org.springframework.stereotype.Service
-public class TestServiceImpl implements TestService {
+public class TestServiceImpl2 implements TestService {
     Logger logger = LoggerFactory.getLogger(TestServiceImpl.class);
     private AtomicInteger counter = new AtomicInteger(0);
 
@@ -19,9 +25,9 @@ public class TestServiceImpl implements TestService {
     public CommonResponse<Long> getARandomNumber(Integer param) {
         Long source = Long.MAX_VALUE;
         int c = counter.getAndIncrement();
-        logger.info("count is {};param={}", c, param);
+        logger.info("count2 is {};param={}", c, param);
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.MILLISECONDS.sleep(500L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -32,12 +38,12 @@ public class TestServiceImpl implements TestService {
 
             }
         }
-        return CommonResponse.responseWith(200, (long) (Math.random() * source), "success");
+        return CommonResponse.responseWith(200, (long) (Math.random() * source), "success2");
     }
 
     @Override
     public CommonResponse<Long> reset() {
         counter.getAndSet(0);
-        return CommonResponse.responseWith(200, 0L, "success");
+        return CommonResponse.responseWith(200, 0L, "success2");
     }
 }

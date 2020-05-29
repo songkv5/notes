@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author willis<songkai01 @ fangdd.com>
+ * @author willis<songkai01>
  * @chapter Dubbo 配置类
  * @section
  * @since 2019年05月21日 11:37
@@ -19,7 +19,7 @@ public class DubboConfig {
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig bean = new ApplicationConfig();
-        bean.setName("estate.search.fdd");
+        bean.setName("test");
         return bean;
     }
 

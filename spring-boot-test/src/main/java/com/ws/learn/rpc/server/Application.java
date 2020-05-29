@@ -7,8 +7,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * 程序启动类
- * Http 端口：8080
- * Dubbo服务端口 ：8280
+ * Http 端口：9000
+ * Dubbo服务端口 ：9200
  */
 @SpringBootApplication(scanBasePackages = "com.ws.learn.rpc.server")
 public class Application {

@@ -1,6 +1,6 @@
 server:
-  port: 8080
+  port: 9000
 dubbo:
-  port: 8280
+  port: 9200
   registry:
-    addr: zookeeper://192.168.0.104:2181
+    addr: zookeeper://localhost:2181

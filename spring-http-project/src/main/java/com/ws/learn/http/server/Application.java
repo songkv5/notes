@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ImportResource;
  * Dubbo服务端口 ：8280
  */
 @SpringBootApplication(scanBasePackages = "com.ws.learn.http.server")
-@ImportResource("classpath:/spring.xml")
 public class Application {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
