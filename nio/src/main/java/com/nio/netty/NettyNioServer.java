@@ -30,9 +30,15 @@ public class NettyNioServer {
                             socketChannel.pipeline().addLast(new ChannelInboundHandlerAdapter() {
                                 @Override
                                 public void channelActive(ChannelHandlerContext ctx) throws Exception {
-                                    ctx.writeAndFlush(byteBuf.duplicate())
+                                    ctx.writeAndFlush(byteBuf.duplicate());
+
+                                    ByteBuf byteBuf2 = Unpooled.copiedBuffer("hello, this is nio netty implement2".getBytes(Charset.forName("utf-8")));
+                                    ctx.writeAndFlush(byteBuf2.duplicate())
+                                            //监听写动作，写完就执行close操作（关闭连接）
                                             .addListener(ChannelFutureListener.CLOSE);
-                                    super.channelActive(ctx);
+
+                                    ByteBuf byteBuf3 = Unpooled.copiedBuffer("hello, this is nio netty implement3".getBytes(Charset.forName("utf-8")));
+                                    ctx.writeAndFlush(byteBuf3.duplicate());
                                 }
                             });
                         }
