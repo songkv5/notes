@@ -22,6 +22,7 @@
         <module>guice-sample</module>
         <module>zk-distribution-lock</module>
         <module>nio</module>
+        <module>dis-lock</module>
     </modules>
 
 
