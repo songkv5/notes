@@ -18,10 +18,14 @@ public class RedissionConfig {
         config.useSentinelServers();
 
         RedissonClient redissonClient = Redisson.create(config);
-        RList<Object> est = redissonClient.getList("est");
-
         RLock rl = redissonClient.getLock("test");
+        // 拿锁
         rl.lock();
-        rl.unlock();
+        try {
+            //干点啥
+        } finally {
+            // 还锁
+            rl.unlock();
+        }
     }
 }
